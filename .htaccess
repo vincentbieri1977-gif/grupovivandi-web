@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.grupovivandi\.com$ [NC]
+RewriteRule ^(.*)$ https://grupovivandi.com/$1 [L,R=301]
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType application/pdf "access plus 7 days"
+</IfModule>
