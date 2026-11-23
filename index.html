@@ -66,6 +66,16 @@ section{padding:80px 0}h2{font-size:clamp(26px,3.4vw,38px);color:var(--azul);lin
 footer{background:#0a1f36;color:#9fb3c3;font-size:13px;padding:26px 0}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;border-radius:50px;padding:13px 18px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .gal{display:grid;grid-template-columns:3fr 2fr;gap:16px;margin-top:22px}@media(max-width:760px){.gal{grid-template-columns:1fr}}.gal figure{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(14,42,71,.12)}.gal img{width:100%;height:100%;min-height:240px;object-fit:cover}.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;color:#fff;font-weight:600;font-size:14px;background:linear-gradient(180deg,transparent,rgba(14,42,71,.85))}.nota{font-size:12px;color:#8a99a6;margin-top:8px}
+.fbox{background:#fff;color:var(--gris);border-radius:14px;padding:28px;margin-top:30px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.fbox h3{color:var(--azul);font-size:22px;margin-bottom:4px}.fbox .sub{font-size:14px;margin-bottom:18px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+.fgrid .full{grid-column:1/-1}.fbox label{display:block;font-size:13px;font-weight:600;color:var(--azul);margin-bottom:5px}
+.fbox input,.fbox select,.fbox textarea{width:100%;font:inherit;font-size:15px;padding:11px 12px;border:1px solid #cdd9e1;border-radius:8px;background:#fff;color:#1d2b38}
+.fbox input:focus,.fbox select:focus,.fbox textarea:focus{outline:2px solid var(--aqua);border-color:var(--aqua)}
+.fbox button{margin-top:16px;background:var(--aqua);color:#fff;border:0;border-radius:8px;padding:14px 26px;font:inherit;font-weight:700;font-size:16px;cursor:pointer}.fbox button:disabled{opacity:.6;cursor:wait}
+.fbox .priv{font-size:12px;color:#7b8a96;margin-top:10px}.hp{position:absolute;left:-9999px}
+.ok{display:none;text-align:center;padding:30px 10px}.ok b{display:block;font-size:24px;color:var(--azul);margin:10px 0 6px}.ok .chk{width:58px;height:58px;border-radius:50%;background:var(--aqua);color:#fff;font-size:32px;line-height:58px;margin:0 auto}
+.ferr{display:none;color:#b3261e;font-size:14px;margin-top:10px}
 </style>
 </head>
 <body>
@@ -126,7 +136,7 @@ footer{background:#0a1f36;color:#9fb3c3;font-size:13px;padding:26px 0}footer .wr
 <div class="line"><b>Garantía de fábrica</b><span>En membrana y estructura.</span></div>
 </div>
 <div class="grid4 data" style="grid-template-columns:1fr 1fr;margin-top:22px"><div><b>1.</b>Ganas al vender e instalar cada alberca Pool &amp; Play.</div><div><b>2.</b>Ganas cada mes: tu cliente vuelve contigo por los químicos Hydrox.</div></div>
-<div class="btns"><a class="btn p" href="https://wa.me/525571000508?text=Hola%20Grupo%20Vivandi%2C%20quiero%20ser%20distribuidor">Quiero ser distribuidor</a></div>
+<div class="btns"><a class="btn p" href="#formulario">Quiero ser distribuidor</a></div>
 </div></section>
 
 <section id="catalogos" class="bruma"><div class="wrap">
@@ -147,10 +157,45 @@ footer{background:#0a1f36;color:#9fb3c3;font-size:13px;padding:26px 0}footer .wr
 <a href="https://wa.me/525571000508?text=Hola%20Grupo%20Vivandi%2C%20quiero%20informaci%C3%B3n"><small>WhatsApp</small><b>+52 55 7100 0508</b></a>
 <a href="mailto:hola@grupovivandi.com"><small>Correo</small><b>hola@grupovivandi.com</b></a>
 <a href="https://grupovivandi.com/"><small>Almacenes</small><b>Cuernavaca · Puerto Vallarta · Cancún · Mérida</b></a>
-</div></div></section>
+</div>
+<div class="fbox" id="formulario">
+<form id="gvform" action="https://formsubmit.co/hola@grupovivandi.com" method="POST" novalidate>
+<h3>Déjanos tus datos</h3><p class="sub">Te contactamos en menos de 24 horas hábiles.</p>
+<div class="fgrid">
+<div><label for="f-nombre">Nombre completo *</label><input id="f-nombre" name="Nombre" required autocomplete="name"></div>
+<div><label for="f-empresa">Empresa</label><input id="f-empresa" name="Empresa" autocomplete="organization"></div>
+<div><label for="f-tel">WhatsApp / teléfono *</label><input id="f-tel" name="Telefono" type="tel" required autocomplete="tel"></div>
+<div><label for="f-email">Correo electrónico *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+<div><label for="f-ciudad">Ciudad y estado *</label><input id="f-ciudad" name="Ciudad" required></div>
+<div><label for="f-interes">Me interesa *</label><select id="f-interes" name="Interes" required>
+<option value="">Selecciona una opción</option><option>Ser distribuidor autorizado</option><option>Cotizar membrana Cefil</option><option>Albercas Pool &amp; Play</option><option>Químicos Hydrox</option><option>Accesorios empotrables</option><option>Cisternas Tank &amp; Play</option><option>Zeolita y filtración</option><option>Termofusiones</option><option>Plantas de tratamiento</option><option>Otro</option></select></div>
+<div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="Mensaje" rows="4"></textarea></div>
+</div>
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+<input type="hidden" name="_subject" value="Nueva solicitud desde grupovivandi.com">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_autoresponse" value="Hola, gracias por escribir a Grupo Vivandi. Hemos recibido tu solicitud y un asesor te contactará en menos de 24 horas hábiles. Si es urgente, escríbenos por WhatsApp al +52 55 7100 0508. Grupo Vivandi · Por un agua siempre viva.">
+<button type="submit">Enviar solicitud</button>
+<p class="ferr" id="ferr">No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp al +52 55 7100 0508.</p>
+<p class="priv">Usamos tus datos solo para atender tu solicitud.</p>
+</form>
+<div class="ok" id="gvok" role="status" aria-live="polite"><div class="chk">✓</div><b>Hemos recibido tu solicitud</b><p>Gracias por escribirnos. Un asesor de Grupo Vivandi te contactará en menos de 24 horas hábiles. Te enviamos una confirmación a tu correo.</p></div>
+</div>
+</div></section>
 </main>
 
 <footer><div class="wrap"><span>© 2026 Grupo Vivandi América, S.A. de C.V. · Por un agua siempre viva</span><span>Cefil es marca de su titular; Grupo Vivandi es su importador exclusivo en México.</span></div></footer>
 <a class="wa" href="https://wa.me/525571000508?text=Hola%20Grupo%20Vivandi%2C%20quiero%20informaci%C3%B3n" aria-label="WhatsApp Grupo Vivandi">WhatsApp</a>
+<script>
+(function(){var f=document.getElementById('gvform');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();var err=document.getElementById('ferr');err.style.display='none';
+if(!f.checkValidity()){f.reportValidity();return;}
+var b=f.querySelector('button');b.disabled=true;b.textContent='Enviando…';
+fetch('https://formsubmit.co/ajax/hola@grupovivandi.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+.then(function(r){return r.json().then(function(d){if(!r.ok||d.success==='false'||d.success===false)throw d;})})
+.then(function(){f.style.display='none';var ok=document.getElementById('gvok');ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(function(){err.style.display='block';b.disabled=false;b.textContent='Enviar solicitud';});});})();
+</script>
 </body>
 </html>
