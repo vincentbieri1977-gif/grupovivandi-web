@@ -159,7 +159,7 @@ footer{background:#0a1f36;color:#9fb3c3;font-size:13px;padding:26px 0}footer .wr
 <a href="https://grupovivandi.com/"><small>Almacenes</small><b>Cuernavaca · Puerto Vallarta · Cancún · Mérida</b></a>
 </div>
 <div class="fbox" id="formulario">
-<form id="gvform" action="https://formsubmit.co/hola@grupovivandi.com" method="POST" novalidate>
+<form id="gvform" action="https://formsubmit.co/2f35ad147818755c5ba33d8bb3567d32" method="POST" novalidate>
 <h3>Déjanos tus datos</h3><p class="sub">Te contactamos en menos de 24 horas hábiles.</p>
 <div class="fgrid">
 <div><label for="f-nombre">Nombre completo *</label><input id="f-nombre" name="Nombre" required autocomplete="name"></div>
@@ -192,7 +192,7 @@ footer{background:#0a1f36;color:#9fb3c3;font-size:13px;padding:26px 0}footer .wr
 f.addEventListener('submit',function(e){e.preventDefault();var err=document.getElementById('ferr');err.style.display='none';
 if(!f.checkValidity()){f.reportValidity();return;}
 var b=f.querySelector('button');b.disabled=true;b.textContent='Enviando…';
-fetch('https://formsubmit.co/ajax/hola@grupovivandi.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+fetch('https://formsubmit.co/ajax/2f35ad147818755c5ba33d8bb3567d32',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
 .then(function(r){return r.json().then(function(d){if(!r.ok||d.success==='false'||d.success===false)throw d;})})
 .then(function(){f.style.display='none';var ok=document.getElementById('gvok');ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});})
 .catch(function(){err.style.display='block';b.disabled=false;b.textContent='Enviar solicitud';});});})();
